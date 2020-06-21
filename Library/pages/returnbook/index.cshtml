@@ -1,0 +1,44 @@
+﻿@page
+@model Library.pages.returnbook.indexModel
+@{
+    ViewData["Title"] = "index";
+}
+
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Возврат книги в библиотеку</title>
+        <link rel="stylesheet" type="text/css" href="~/Style.css" alt="ASP.NET">
+    </head>
+    <body>
+        <form method="get">
+            <p>
+                <div id="templatemo_content_wrapper">
+                    <h2>Выберите книгу:</h2>
+                </div>
+                <select  class="input_select" name="book" id="book">
+
+                    @foreach (Library.Book b in Model.BooksUseInLibrary)
+                    {
+                        <option value=@b.Id>@b.Name</option>
+                    }
+                    @foreach (Library.Book b in Model.BooksUseOnHands)
+                    {
+                        <option value=@b.Id>@b.Name</option>
+                    }
+
+                </select>
+            </p>
+
+            <p><input class="input_button" type="submit" value="Вернуть книгу"></p>
+
+        </form>
+        <p>
+            <div id="templatemo_content_wrapper">
+                <h3>
+                    <a href="../">Вернуться обратно</a>
+                </h3>
+            </div>
+        </p>
+    </body>
+    </html>

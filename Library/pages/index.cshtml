@@ -1,0 +1,36 @@
+﻿@page
+@model Library.pages.indexModel
+@{
+    ViewData["Title"] = "index";
+}
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>АРМ библиотекаря</title>
+        <link rel="stylesheet" type="text/css" href="~/Style.css" alt="ASP.NET">
+    </head>
+    <body>
+        <div id="templatemo_content_wrapper">
+            <h3>
+                Автоматизированное рабочее место сотрудника библиотеки
+            </h3>
+        </div>
+        <div id="templatemo_content_wrapper">
+            <h2>
+                <a href=@Model.HrefToGiveOnHand>Выдать книгу на руки</a>
+            </h2>
+        </div>
+        <div id="templatemo_content_wrapper">
+            <h2>
+                <a href=@Model.HrefToGiveInLibrary>Выдать книгу в библиотеке</a>
+            </h2>
+        </div>
+        <div id="templatemo_content_wrapper">
+            <h2>
+                <a href=@Model.HrefToReturn>Вернуть книгу</a>
+            </h2>
+        </div>
+    </body>
+</html>
+

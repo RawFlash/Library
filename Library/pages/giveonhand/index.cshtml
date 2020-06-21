@@ -1,0 +1,53 @@
+﻿@page
+@model Library.pages.giveonhand.indexModel
+@{
+    ViewData["Title"] = "index";
+}
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Выдача книг на руки</title>
+        <link rel="stylesheet" type="text/css" href="~/Style.css" alt="ASP.NET">
+    </head>
+    <body>
+        <form method="get">
+            <p>
+                <div id="templatemo_content_wrapper">
+                    <h2>Выберите книгу:</h2>
+                </div>
+                <select class="input_select" name="book" id="book">
+
+                    @foreach (Library.Book b in Model.Books)
+                    {
+                        <option value=@b.Id>@b.Name</option>
+                    }
+
+                </select>
+            </p>
+            <p>
+                <div id="templatemo_content_wrapper">
+                    <h2>Выберите читателя:</h2>
+                </div>
+                <select class="input_select" name="reader" id="reader">
+
+                    @foreach (Library.Reader r in Model.Readers)
+                    {
+                        <option value=@r.Id>@r.Name</option>
+                    }
+
+                </select>
+            </p>
+
+            <p><input class="input_button" type="submit" value="Выдать книгу на руки"></p>
+
+        </form>
+        <p>
+            <div id="templatemo_content_wrapper">
+                <h3>
+                    <a href="../">Вернуться обратно</a>
+                </h3>
+            </div>
+        </p>
+    </body>
+</html>
